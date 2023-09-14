@@ -1,5 +1,5 @@
-import Layout from "@/Components/Layout";
-import ProductDetail from "@/Components/ProductDetail";
+import Layout from "@/components/Layout";
+import ProductDetail from "@/components/ProductDetail";
 import { products } from "@/constants/products";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";

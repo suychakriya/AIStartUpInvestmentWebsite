@@ -1,5 +1,5 @@
-import ProductItem from "@/Components/ProductItem";
-import Layout from "@/Components/Layout";
+import ProductItem from "@/components/ProductItem";
+import Layout from "@/components/Layout";
 import { useRouter } from "next/router";
 import { useContext } from "react";
 
