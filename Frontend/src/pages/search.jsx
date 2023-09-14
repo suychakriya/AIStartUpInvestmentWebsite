@@ -8,16 +8,16 @@ import Link from "next/link";
 
 const PAGE_SIZE = 2;
 
-const prices = [
-    {
-        name: '$1 to 50',
-        value: '1-50',
-    },
-    {
-        name: '$50$ to $200',
-        value: '51-200',
-    },
-];
+// const prices = [
+//     {
+//         name: '$1 to 50',
+//         value: '1-50',
+//     },
+//     {
+//         name: '$50$ to $200',
+//         value: '51-200',
+//     },
+// ];
 
 export default function Search(props) {
     const router = useRouter();
