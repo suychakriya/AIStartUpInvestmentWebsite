@@ -10,7 +10,8 @@ export default function Footer() {
         <div className="space-y-4">
          <img 
          src="/Images/logo.png"
-         alt="logo" />
+         alt="logo" 
+         className='h-10 w-45'/>
         </div>
 
         <div className="space-y-4 ">

@@ -1,59 +1,32 @@
 import ProductItem from "@/components/ProductItem";
 import Layout from "@/components/Layout";
 import { useRouter } from "next/router";
-import { useContext } from "react";
-
+import { useState } from "react";
+import { useEffect } from "react";
 import { products } from "@/constants/products";
 import Link from "next/link";
+import { XCircleIcon } from "@heroicons/react/outline";
 
 const PAGE_SIZE = 2;
 
-// const prices = [
-//     {
-//         name: '$1 to 50',
-//         value: '1-50',
-//     },
-//     {
-//         name: '$50$ to $200',
-//         value: '51-200',
-//     },
-// ];
-
-export default function Search(props) {
+export default function Searchpage(props) {
     const router = useRouter();
+  
+    const [items, setItems] = useState(products);
+    const [count, setCount] = useState();
+    const [categoryValue, setCategoryValue] = useState("")
 
-    const {
-        query = 'all',
-        category = 'all',
-        price = 'all',
-        page = 1, 
-    } = router.query;
-
-    // const { products, countProducts, categories, pages } = props;
-
-    const filterSearch = ({
-        page,
-        category,
-        searchQuery,
-        price,
-    }) => {
-        const { query } = router;
-        if (page) query.page = page;
-        if(searchQuery) query.searchQuery = searchQuery;
-        if (category) query.category = category;
-        if (price) query.price = price;
-
-        router.push ({
-            pathname: router.pathname,
-            query: query,
-        })
-    };
-    const categoryHandler = (e) => {
-        filterSearch({ category: e.target.value});
-    };
-    const priceHandler = (e) => {
-        filterSearch({ price: e.target.value});
-    };
+    const filterSearch =  ( categoryValue ) => {    
+            const testProduct = products.filter(product => product.category === categoryValue);
+            setItems(testProduct)
+            setCount(testProduct.length)
+            setCategoryValue(categoryValue)
+        };
+    // };
+    // const categoryHandler = (e) => {
+    //     filterSearch({ category: e.target.value});
+    // };
+   
     const pageHandler = (page) => {
         filterSearch({ page });
     };
@@ -72,7 +45,7 @@ export default function Search(props) {
                 
                 <div className="my-3 pt-5">
                     <Link href={``}>
-                        <div className="flex pb-4">
+                        <div className="flex pb-4" onClick={() => filterSearch("Image generation AI Services")}>
                         <img 
                         src="/Images/Icons/image.png"
                         alt="ImageIcon" />
@@ -80,7 +53,7 @@ export default function Search(props) {
                         </div>
                     </Link>
                     <Link href={``}>
-                        <div className="flex pb-4">
+                        <div className="flex pb-4" onClick={() => filterSearch("Music AI Services")}>
                         <img 
                         src="/Images/Icons/music.png"
                         alt="MusicIcon" />
@@ -88,7 +61,7 @@ export default function Search(props) {
                         </div>
                     </Link>
                     <Link href={``}>
-                        <div className="flex pb-4">
+                        <div className="flex pb-4" onClick={() => filterSearch("Text generation")}>
                         <img 
                         src="/Images/Icons/text.png"
                         alt="TextIcon" />
@@ -96,7 +69,7 @@ export default function Search(props) {
                         </div>
                     </Link>
                     <Link href={``}>
-                        <div className="flex pb-4">
+                        <div className="flex pb-4" onClick={() => filterSearch("Video AI generation")}>
                         <img 
                         src="/Images/Icons/video.png"
                         alt="VideoIcon" />
@@ -104,7 +77,7 @@ export default function Search(props) {
                         </div>
                     </Link>
                     <Link href={``}>
-                        <div className="flex pb-4">
+                        <div className="flex pb-4" onClick={() => filterSearch("Email Writing")}>
                         <img 
                         src="/Images/Icons/email.png"
                         alt="EmailIcon" />
@@ -112,7 +85,7 @@ export default function Search(props) {
                         </div>
                     </Link>
                     <Link href={``}>
-                        <div className="flex pb-4">
+                        <div className="flex pb-4" onClick={() => filterSearch("Voice Recognition")}>
                         <img 
                         src="/Images/Icons/voice.png"
                         alt="VoiceIcon" />
@@ -120,7 +93,7 @@ export default function Search(props) {
                         </div>
                     </Link>
                     <Link href={``}>
-                        <div className="flex pb-4">
+                        <div className="flex pb-4" onClick={() => filterSearch("Coding Generation")}>
                         <img 
                         src="/Images/Icons/coding.png"
                         alt="CodingIcon" />
@@ -128,7 +101,7 @@ export default function Search(props) {
                         </div>
                     </Link>
                     <Link href={``}>
-                        <div className="flex pb-4">
+                        <div className="flex pb-4" onClick={() => filterSearch("Prompt")}>
                         <img 
                         src="/Images/Icons/prompt.png"
                         alt="PromptIcon" />
@@ -136,7 +109,7 @@ export default function Search(props) {
                         </div>
                     </Link>
                     <Link href={``}>
-                        <div className="flex pb-4">
+                        <div className="flex pb-4" onClick={() => filterSearch("Slide Presentation")}>
                         <img 
                         src="/Images/Icons/slidepresentation.png"
                         alt="SlideIcon" />
@@ -147,24 +120,18 @@ export default function Search(props) {
                 </div>
             </div>
             <div className="md:col-span-3">
-                {/* <div className="mb-2 flex items-center justify-between border-b-2 pb-2">
-                    <div className="flex items-center">
-                        {products.length === 0 ? 'No' : countProducts} Results
-                            {query !== 'all' && query !== '' && ' : ' + query}
-                            {category !== 'all' && ' : ' + category}
-                            {price !== 'all' && ' : ' + price}
-                            &nbsp;
-                            {(query !== 'all' && query !== '') ||
-                            category !== 'all' ||
-                            price !== 'all' ? (
-                                <button onClick={() => router.push('/search')}>
-                                    <XClircleIcon className="h-5 w-5" />
+                <div className="mb-2 flex items-center justify-between border-b-2 pb-2">
+                    <div className="flex items-center text-black">
+                        {count === 0 ? 'No' : count} Results
+                            {(categoryValue !== '') ? (
+                                <button onClick={() => window.location = "/Layout/Searchpage"}>
+                                    <XCircleIcon className=" pt-1 h-5 w-6 " />
                                 </button>
                             ) : null}
                     </div>
-                </div> */}
+                </div>
                 <div className="grid grid-cols-1 gap-8 md:grid-cols-4 ">
-                    {products.map(({ id, name, category, fund, percent, image, website }) => (
+                    {items.map(({ id, name, category, fund, percent, image, website }) => (
                         <ProductItem
                         key={name}
                         id={id}
@@ -197,24 +164,4 @@ export default function Search(props) {
        </Layout>
     );
 }
-
-// export async function getServerSideProps({ query }) {
-//     const pageSize = query.pageSize || PAGE_SIZE;
-//     const page = query.page || 1; 
-//     const category = query.category || '';
-//     const price = query.price || '';
-//     const searchQuery = query.query || '';
-
-//     const queryFilter = 
-//         searchQuery && searchQuery !== 'all'
-//         ? {
-//             name: {
-//                 $regex: searchQuery,
-//                 $options: 'i',
-//             }
-//         }
-//         : {};
-//     const categoryFilter = category && category !== 'all' ? { category } : {};
-
-// }
 

@@ -1,10 +1,10 @@
 import Link from "next/link";
 
-export default function ProductDetail({ name, category ='hi', fund = 'hi', percent = 'hi', image = '/Images/Project/gencraft.jpg', website, overview }) {
+export default function ProductDetail({ name, category, fund, percent, image, website, overview }) {
     return (
     <div className="card flex justify-between rounded-2xl p-10">
         <div className="bg-white w-[58%]">
-            <Link href="/Layout/Detailpage">
+            <Link href="">
             <img
                 src={image}
                 alt={name}
@@ -14,7 +14,7 @@ export default function ProductDetail({ name, category ='hi', fund = 'hi', perce
         </div>
         <div className="flex flex-col p-3 px-7 w-[40%] bg-white">
           <p className='text-md text-primary font-semibold py-1'>Funding Project</p>
-          <Link href={``}>
+          <Link href=''>
             <h2 className="text-4xl font-bold text-black py-3">{name}</h2>
           </Link>
           <p className="mb-2 text-md font-bold text-black pb-1">Project Summary</p>
@@ -27,13 +27,17 @@ export default function ProductDetail({ name, category ='hi', fund = 'hi', perce
             <p className='mb-2 text-lg font-semibold text-black pb-1'>{percent} funded</p>
             <p className='mb-2 text-lg font-semibold text-black pb-1'>{fund} raised</p>
           </div>
-          <button
-                className="w-[40%] justify-center rounded-lg shadow-md px-2 text-sm font-bold text-white bg-primary"
+          <div className="flex justify-center p-5">
+            <button
+                className=" justify-center rounded-lg shadow-lg px-20 py-2 text-md font-bold text-white bg-primary"
                 type="submit"
-                id="button-addon2"
+                onClick={() =>
+                  (window.location = "mailto:suy.chakriya19@kit.edu.kh?")
+                }
               >
-                <p className="pb-1">Contact me</p>
-              </button>
+                <p className="pb-1 ">Contact For Funding</p>
+            </button>
+          </div>
         </div>
       </div>
     )

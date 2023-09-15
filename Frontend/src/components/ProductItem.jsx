@@ -5,12 +5,12 @@ import React from 'react';
 export default function ProductItem({id, name, category, fund, percent, image, website }) {
 
   return (
-    <div className="card bg-white rounded-2xl">
+    <div className="card bg-white rounded-lg">
       <Link href={`/Layout/Detailpage?id=${id}`}>
         <img
           src={image}
           alt={name}
-          className="rounded-t-2xl shadow object-cover h-[50%] w-full"
+          className="rounded-t-lg shadow object-cover h-[50%] w-full"
         />
         <div className="flex flex-col justify-center p-3">
           <p className='text-sm text-primary font-semibold py-1'>Funding Project</p>

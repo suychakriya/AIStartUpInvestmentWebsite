@@ -1,33 +1,10 @@
-// import { signOut, useSession } from 'next-auth/react';
 import Head from 'next/head';
 import Link from 'next/link';
-// import Cookies from 'js-cookie';
 import React, { useContext, useEffect, useState } from 'react';
-// import { ToastContainer } from 'react-toastify';
-// import { Menu } from '@headlessui/react';
-// import 'react-toastify/dist/ReactToastify.css';
-// import { Store } from '../utils/Store';
-// import DropdownLink from './DropdownLink';
 import { useRouter } from 'next/router';
 import Footer from './Footer';
 
-// import SearchIcon from '@heroicons/react/24/outline/MagnifyingGlassIcon';
-
 export default function Layout({ title, children }) {
-//   const { status, data: session } = useSession();
-
-//   const { state, dispatch } = useContext(Store);
-//   const { cart } = state;
-//   const [cartItemsCount, setCartItemsCount] = useState(0);
-//   useEffect(() => {
-//     setCartItemsCount(cart.cartItems.reduce((a, c) => a + c.quantity, 0));
-//   }, [cart.cartItems]);
-
-//   const logoutClickHandler = () => {
-//     Cookies.remove('cart');
-//     dispatch({ type: 'CART_RESET' });
-//     signOut({ callbackUrl: '/login' });
-//   };
 
   const [query, setQuery] = useState('');
 
@@ -54,6 +31,7 @@ export default function Layout({ title, children }) {
               <img
               src='/Images/logo.png'
               alt='logo'
+              className='h-10 w-45'
                />
             </Link>
             <form
@@ -64,7 +42,7 @@ export default function Layout({ title, children }) {
               <input
                 onChange={(e) => setQuery(e.target.value)}
                 type="text"
-                className="w-[100%] border  border-gray-300 shadow-md p-1 text-sm   focus:ring-0"
+                className="w-[100%] border  border-gray-300 shadow-md p-1 text-sm text-black  focus:ring-0"
                 // placeholder="Search products"
               />
               <button
@@ -79,14 +57,14 @@ export default function Layout({ title, children }) {
               </button>
             </form>
             <div className="flex items-center z-10">
-              <Link href="/cart" className="p-2">
-                Cart
+              {/* <Link href="/cart" className="p-2"> */}
+                Cartsssssss
                 {/* {cartItemsCount > 0 && (
                   <span className="ml-1 rounded-full bg-red-600 px-2 py-1 text-xs font-bold text-white">
                     {cartItemsCount}
                   </span>
                 )} */}
-              </Link>
+              {/* </Link> */}
             </div>
           </nav>
         </header>

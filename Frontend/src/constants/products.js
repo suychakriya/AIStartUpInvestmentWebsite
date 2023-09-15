@@ -12,7 +12,7 @@ export const products = [
     {
         id : 2,
         name : "Soundraw",
-        category : "Music AI Service",
+        category : "Music AI Services",
         fund : "$500",
         percent : "45%",
         image : "/Images/Project/soundraw.jpg",
@@ -42,7 +42,7 @@ export const products = [
     {
         id : 5,
         name : "Soundful",
-        category : "Music AI Service",
+        category : "Music AI Services",
         fund : "$1000",
         percent : "35%",
         image : "/Images/Project/soundful.jpg",

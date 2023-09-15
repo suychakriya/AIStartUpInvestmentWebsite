@@ -1,12 +1,17 @@
 import Image from 'next/image'
 import { Inter } from 'next/font/google'
 import Layout from '@/components/Layout'
-import Search from './search'
+import Searchpage from './Layout/Searchpage'
+import Homepage from './Layout/Homepage'
+
+
+
+
 
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
   return (
-   <Search />
+   <Homepage />
   )
 }
