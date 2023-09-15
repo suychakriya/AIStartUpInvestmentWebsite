@@ -32,7 +32,7 @@ export default function Searchpage(props) {
     };
 
     return (
-       <Layout title="search">
+       <Layout title="Search">
         <div className="px-5 pb-5 grid md:grid-cols-4 md:gap-5">
             <div className="rounded-lg px-8 bg-white">
                 <div className="flex flex-cols my-3 border-2 border-gray-00 border-t-0 border-r-0 border-l-0 ">

@@ -11,13 +11,13 @@ export default function Layout({ title, children }) {
   const router = useRouter();
   const submitHandler = (e) => {
     e.preventDefault();
-    router.push(`/search?query=${query}`);
+    router.push("/Layout/Searchpage");
   };
 
   return (
     <>
       <Head>
-        <title>{title ? title + ' - Amazona' : 'Amazona'}</title>
+        <title>{title ? title + ' - IDEAI' : 'IDEAI'}</title>
         <meta name="description" content="Ecommerce Website" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
@@ -48,7 +48,7 @@ export default function Layout({ title, children }) {
               <button
                 className="border border-l-0 border-gray-300 rounded-r-full shadow-md p-1 px-2 text-sm dark:text-black"
                 type="submit"
-                id="button-addon2"
+                onClick={() => {submitHandler}}
               >
                 <img
                 src='/Images/Icons/searchicon.png'

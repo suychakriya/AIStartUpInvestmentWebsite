@@ -5,7 +5,7 @@ import Link from "next/link";
 export default function Homepage () {
     return (
         <Layout>
-            <div className="flex flex-col pb-5">
+            <div className="flex flex-col pb-10">
                 <div className="flex flex-col items-center px-20">
                     <img 
                     src="/Images/logo.png"
@@ -20,8 +20,23 @@ export default function Homepage () {
                             <button className="flex items-center w-full rounded-lg shadow-md px-20 py-3 text-sm font-bold text-white bg-primary">Get Explore <img src="/Images/Icons/arrow.png" className="flex mt-1 ml-2 h-2 w-4 "/> </button>
                         </Link>
                     </div>
-                    
                 </div>
+                <div className="flex flex-col px-[15%] pt-20 text-gray-500 text-lg">
+                    <div className="">
+                        <span className="flex justify-start text-4xl text-primary font-semibold" >- Vision</span>
+                        <p className="flex justify-start pt-5"><span className="text-2xl text-primary font-semibold font-serif">“</span>Giving everyone with everything <br />they want to build their future<span className="text-2xl text-primary font-semibold font-serif">”</span></p>
+                    </div>
+                    <div className="pb-20">
+                        <span className="flex justify-end text-4xl text-primary font-semibold" >Mission -</span>
+                        <p className="flex justify-end pt-5"><span className="text-2xl text-primary font-semibold font-serif">“</span>Create a platform where project initiators <br />come to raise fund for their projects<span className="text-2xl text-primary font-semibold font-serif">”</span></p>
+                    </div>
+                    <div className="mx-[45%] h-1 w-28 bg-primary"></div>
+                </div>
+
+                {/* <div className="flex flex-col pt-5">
+                    <p className="flex justify-center text-4xl font-bold text-primary">Our Team members</p>
+                </div> */}
+                    
             </div>
             
         </Layout>

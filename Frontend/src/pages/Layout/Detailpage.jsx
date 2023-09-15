@@ -14,7 +14,7 @@ export default function Detailpage () {
     }, [])
     
     return (
-        <Layout title="detail">  
+        <Layout title="Detail">  
             <div className="flex flex-col">       
                     <ProductDetail
                     key={items.name}
