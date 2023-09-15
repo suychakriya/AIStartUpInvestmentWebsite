@@ -8,7 +8,7 @@ export default function ProductDetail({ name, category, fund, percent, image, we
             <img
                 src={image}
                 alt={name}
-                className="rounded-t-2xl shadow object-cover "
+                className="rounded-2xl shadow object-cover "
             />
             </Link>
         </div>

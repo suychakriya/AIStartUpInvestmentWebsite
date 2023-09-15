@@ -11,6 +11,7 @@ export default function Layout({ title, children }) {
   const router = useRouter();
   const submitHandler = (e) => {
     e.preventDefault();
+    // {query === '' ? color = 'red' : 
     router.push("/Layout/Searchpage");
   };
 
@@ -56,7 +57,7 @@ export default function Layout({ title, children }) {
                 className="h-4 w-5"/>
               </button>
             </form>
-            <div className="flex items-center z-10">
+            <div className="flex items-center z-10 text-white">
               {/* <Link href="/cart" className="p-2"> */}
                 Cartsssssss
                 {/* {cartItemsCount > 0 && (

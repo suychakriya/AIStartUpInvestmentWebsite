@@ -2,7 +2,7 @@
 import Link from 'next/link';
 import React from 'react';
 
-export default function ProductItem({id, name, category, fund, percent, image, website }) {
+export default function ProductItem({id, name, category, fund, percent, image }) {
 
   return (
     <div className="card bg-white rounded-lg">

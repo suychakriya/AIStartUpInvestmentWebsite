@@ -35,13 +35,15 @@ export default function Searchpage(props) {
        <Layout title="Search">
         <div className="px-5 pb-5 grid md:grid-cols-4 md:gap-5">
             <div className="rounded-lg px-8 bg-white">
-                <div className="flex flex-cols my-3 border-2 border-gray-00 border-t-0 border-r-0 border-l-0 ">
-                    <img 
-                    src="/Images/Icons/catergory.png"
-                    alt="catergory icon"
-                    className="h-5 w-5 mt-1"/>
-                    <h1 className=" px-3 pb-3 text-xl font-bold text-primary">Categories</h1>
-                </div>
+                <Link href={""}>
+                    <div className="flex flex-cols my-3 border-2 border-gray-00 border-t-0 border-r-0 border-l-0 " onClick={() => window.location = "/Layout/Searchpage"}>
+                        <img 
+                        src="/Images/Icons/catergory.png"
+                        alt="catergory icon"
+                        className="h-5 w-5 mt-1"/>
+                        <h1 className=" px-3 pb-3 text-xl font-bold text-primary">Categories</h1>
+                    </div>
+                </Link>
                 
                 <div className="my-3 pt-5">
                     <Link href={``}>
