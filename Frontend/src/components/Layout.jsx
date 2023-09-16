@@ -5,14 +5,19 @@ import { useRouter } from 'next/router';
 import Footer from './Footer';
 
 export default function Layout({ title, children }) {
-
+  const a = 'red';
   const [query, setQuery] = useState('');
+  const [color, setColor] = useState('#e2e8f0')
 
   const router = useRouter();
   const submitHandler = (e) => {
+    if (query !== '') {
+      router.push("/Layout/Searchpage");
+  } else {
+      setColor('red');
+  }
     e.preventDefault();
-    // {query === '' ? color = 'red' : 
-    router.push("/Layout/Searchpage");
+    
   };
 
   return (
@@ -22,8 +27,6 @@ export default function Layout({ title, children }) {
         <meta name="description" content="Ecommerce Website" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
-      {/* <ToastContainer position="bottom-center" limit={1} /> */}
 
       <div className="flex min-h-screen flex-col justify-between bg-gray-100">
         <header>
@@ -43,9 +46,7 @@ export default function Layout({ title, children }) {
               <input
                 onChange={(e) => setQuery(e.target.value)}
                 type="text"
-                className="w-[100%] border  border-gray-300 shadow-md p-1 text-sm text-black  focus:ring-0"
-                // placeholder="Search products"
-              />
+                className="w-[100%] border shadow-md p-1 text-sm text-black focus:ring-0" style={{borderColor: `${color}`}} />
               <button
                 className="border border-l-0 border-gray-300 rounded-r-full shadow-md p-1 px-2 text-sm dark:text-black"
                 type="submit"
@@ -71,9 +72,6 @@ export default function Layout({ title, children }) {
         </header>
         <main className="container m-auto mt-4 px-4">{children}</main>
         <Footer />
-        {/* <footer className="flex h-10 justify-center items-center shadow-inner text-primary">
-          <p>Copyright © 2022 Amazona</p>
-        </footer> */}
       </div>
     </>
   );

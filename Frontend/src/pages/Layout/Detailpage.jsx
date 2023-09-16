@@ -17,14 +17,15 @@ export default function Detailpage () {
         <Layout title="Detail">  
             <div className="flex flex-col">       
                     <ProductDetail
-                    key={items.name}
+                    key={items.id}
                     name={items.name}
                     category={items.category}
                     fund={items.fund}
                     percent={items.percent}
                     image={items.image}
                     website={items.website}
-                    overview={items.overview} />
+                    overview={items.overview}
+                    youtubeID={items.youtubeID} />
                 </div>
         </Layout>
     )

@@ -24,11 +24,11 @@ export default function Homepage () {
                 <div className="flex flex-col px-[15%] pt-20 text-gray-500 text-lg">
                     <div className="">
                         <span className="flex justify-start text-4xl text-primary font-semibold" >- Vision</span>
-                        <p className="flex justify-start pt-5"><span className="text-2xl text-primary font-semibold font-serif pr-1">“ </span>Giving everyone with everything <br />they want to build their future <span className="text-2xl text-primary font-semibold font-serif pt-6"> ”</span></p>
+                        <p className="flex justify-start pt-5"><span className="text-2xl text-primary font-semibold font-serif pr-1">“ </span>Giving everyone with everything <br />they want to build their future <span className="text-2xl text-primary font-semibold font-serif pt-6 mr-1">”</span></p>
                     </div>
                     <div className="pb-20">
                         <span className="flex justify-end text-4xl text-primary font-semibold" >Mission -</span>
-                        <p className="flex justify-end pt-5"><span className="text-2xl text-primary font-semibold font-serif pr-1">“ </span>Create a platform where project <br />initiators come to raise fund for their projects<span className="text-2xl text-primary font-semibold font-serif  pt-6"> ”</span></p>
+                        <p className="flex justify-end pt-5"><span className="text-2xl text-primary font-semibold font-serif pr-1">“ </span>Create a platform where project <br />initiators come to raise fund for their projects<span className="text-2xl text-primary font-semibold font-serif pt-6"> ”</span></p>
                     </div>
                     <div className="mx-[45%] h-1 w-28 bg-primary"></div>
                 </div>

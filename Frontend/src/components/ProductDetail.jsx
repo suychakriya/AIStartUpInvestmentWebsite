@@ -1,16 +1,26 @@
 import Link from "next/link";
 
-export default function ProductDetail({ name, category, fund, percent, image, website, overview }) {
+export default function ProductDetail({ name, category, fund, percent, image, website, overview, youtubeID }) {
     return (
     <div className="card flex justify-between rounded-2xl p-10">
-        <div className="bg-white w-[58%]">
-            <Link href="">
-            <img
-                src={image}
-                alt={name}
-                className="rounded-2xl shadow object-cover "
-            />
-            </Link>
+        <div className="bg-white w-[58%] ">
+            <iframe
+              src={youtubeID}
+              title={name}
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              className="w-full h-[70%] rounded-2xl shadow object-cover "
+            ></iframe>
+
+            {/* </Link> */}
+            <div className="grid grid-cols-3 gap-5 py-5">
+              <img src={image} alt={name}
+              className="rounded-lg" />
+              <img src={image} alt={name}
+              className="rounded-lg" />
+              <img src={image} alt={name}
+              className="rounded-lg" />
+            </div>
         </div>
         <div className="flex flex-col p-3 px-7 w-[40%] bg-white">
           <p className='text-md text-primary font-semibold py-1'>Funding Project</p>
